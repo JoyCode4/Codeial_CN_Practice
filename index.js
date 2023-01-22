@@ -6,8 +6,13 @@ const expressLayouts = require("express-ejs-layouts");
 app.use(expressLayouts);
 app.use(express.static("./assets"));
 
+// Use for css and js links extraction into the layouts
+app.set("layout extractStyles",true)
+app.set("layout extractScripts",true)
+
 // Use express router
 app.use("/",require("./routes/index"));
+
 
 // Set up the view engine
 app.set("view engine","ejs");
