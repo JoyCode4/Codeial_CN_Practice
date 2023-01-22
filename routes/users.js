@@ -5,6 +5,8 @@ const usersController=require("../controllers/users_controller");
 console.log("Router is loaded");
 
 router.get("/profile",usersController.profile);
+router.get("/sign_in",usersController.signIn);
+router.get("/sign_up",usersController.signUp);
 // router.get("/post",postsController.post);
 
 module.exports=router;
