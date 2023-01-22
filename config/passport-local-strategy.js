@@ -8,9 +8,9 @@ passport.use(new localStratrgy({
 },
 function(email,password,done){
     // Find the user and establish identity
-    user.findOne({email:email},(err,user)=>{
+    User.findOne({email:email},(err,user)=>{
         if(err){
-            console.log("Errorin Finding User --> Passport");
+            console.log("Error in Finding User --> Passport");
             return done(err);
         }
         if(!user || user.password != password){
@@ -29,7 +29,7 @@ passport.serializeUser(function(user,done){
 
 
 // Deserializing the user from the key in the cookies
-passport.deserializeUser(function(user,done){
+passport.deserializeUser(function(id,done){
     User.findById(id,function(err,user){
         if(err){
             console.log("Errorin Finding User --> Passport");
