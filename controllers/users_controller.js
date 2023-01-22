@@ -15,3 +15,11 @@ module.exports.signUp=function(req,res){
         title:"Sign Up"
     })
 }
+
+module.exports.create=function(req,res){
+    // TODO Later
+}
+
+module.exports.createSession=function(req,res){
+    // TODO Later
+}
