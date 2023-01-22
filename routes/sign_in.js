@@ -1,10 +1,10 @@
 const express=require("express");
 const router=express.Router();
-const signUpController=require("../controllers/sign_up_controller");
+const signInController=require("../controllers/sign_in_controller");
 // const postsController=require("../controllers/posts_controller");
-console.log("Router is loaded");
+console.log("Sign In is loaded");
 
-router.get("/signUp",signUpController.signUp);
+router.get("/signIn",signInController.signIn);
 // router.get("/post",postsController.post);
 
 module.exports=router;
