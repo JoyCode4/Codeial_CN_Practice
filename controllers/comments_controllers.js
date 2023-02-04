@@ -1,3 +1,4 @@
+const { localsName } = require("ejs");
 const Comment=require("../models/comment");
 const Post =require("../models/post");
 
@@ -26,6 +27,7 @@ module.exports.createComment=(req,res)=>{
                 })
             }
         }
-    })
+    });
+
 }
 

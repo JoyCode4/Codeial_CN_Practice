@@ -11,6 +11,11 @@
             <ol>
                 <% for(let post of posts){%>
                     <li>
+                        <% if((locals.user) && (locals.user.id == post.user.id)){ %>
+                        <small>
+                            <a href="/posts/destroy/?id=<%= post.id %>">X</a>
+                        </small>
+                        <%}%>
                         <%= post.content %>
                         <br>
                         <span>

@@ -21,4 +21,26 @@ module.exports.createPost=(req,res)=>{
     })
 }
 
+module.exports.destroy=(req,res)=>{
+    Post.findById(req.query.id,(err,post)=>{
+        if(err){
+            console.log("Error is here : "
+            +err);
+            return;
+        }
+        console.log(req.user.id);
+        console.log(req.query.id);
+        console.log(post);
+        // .id means converting the object id into string
+        
+        if(post.user == req.user.id){
+            post.remove();
+            Comment.deleteMany({post:req.query.id});
+            return res.redirect("/");
+        }
+        else{
+            return res.redirect("/");
+        }
+    })
+}
 
