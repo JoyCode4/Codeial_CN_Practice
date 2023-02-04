@@ -28,6 +28,23 @@ module.exports.createComment=(req,res)=>{
             }
         }
     });
+}
 
+module.exports.destroy=(req,res)=>{
+    Comment.findById(req.query.id,(err,comment)=>{
+        if(err){
+            console.log("Here is Error : "+err);
+            return;
+        }
+        if(comment.user == req.user.id){
+            let postId=comment.post;
+            comment.remove();
+            Post.findByIdAndUpdate(postId,{$pull : {comments:req.query.id}},(err,post)=>{
+                return res.redirect("/");
+            });
+        }else{
+            return res.redirect("/");
+        }
+    })
 }
 
