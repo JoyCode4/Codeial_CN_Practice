@@ -15,7 +15,15 @@ module.exports.home=function(request,response){
     })
     */
 
-    Post.find({}).populate("user").exec((err,posts)=>{
+    Post.find({})
+    .populate("user")
+    .populate({
+        path:'comments',
+        populate:{
+            path:'user'
+        }
+    })
+    .exec((err,posts)=>{
         if(err){
             console.log("Error in Showing on Home page the posts");
         }
