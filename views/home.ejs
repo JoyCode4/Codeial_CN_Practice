@@ -1,5 +1,5 @@
     <h1>Codeial / <%=title%></h1>
-    <% if(locals.user){ %>
+    
     <section id="feed-post">
         <h4>Posts</h4>
         <form id="new-post-form" action="/posts/posts-create" method="post">
@@ -13,4 +13,13 @@
             </ol>
         </div>
     </section>
-    <%}%>
+
+    <section id="user-friends">
+        <h4>Friends</h4>
+
+        <% for(let x of all_users){ %>
+            <p>
+                <a href="/users/profile/<%=x.id%>"><%=x.email%></a>
+            </p>
+        <% } %>
+    </section>
