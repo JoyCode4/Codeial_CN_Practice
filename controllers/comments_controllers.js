@@ -14,11 +14,12 @@ module.exports.createComment=async (req,res)=>{
                 
             post.comments.push(comment);
             post.save();
-
+            req.flash("success","comment is Published!");
             res.redirect("/");
         }
     }catch(err){
-        console.log("Error : " + err);
+        req.flash("error",err);
+        res.redirect("/");
     }
     
 }
@@ -30,13 +31,15 @@ module.exports.destroy=async (req,res)=>{
             let postId=comment.post;
             comment.remove();
             let post = await Post.findByIdAndUpdate(postId,{$pull : {comments:req.query.id}});
-            
+            req.flash("success","comment is deleted Successfully!");
             return res.redirect("/");
         }else{
+            req.flash("error","You can't delete this comment....");
             return res.redirect("/");
         }
     }catch(err){
-        console.log("Error : "+ err);
+        req.flash("error",err);
+        res.redirect("/");
     }
 }
 
