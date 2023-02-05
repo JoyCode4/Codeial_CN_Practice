@@ -7,7 +7,7 @@ module.exports.post=function(req,res){
         title:"Posts"
     })
 }
-
+/*
 module.exports.createPost=(req,res)=>{
     Post.create({
         content:req.body.content,
@@ -20,27 +20,37 @@ module.exports.createPost=(req,res)=>{
         return res.redirect("back");
     })
 }
+*/
 
-module.exports.destroy=(req,res)=>{
-    Post.findById(req.query.id,(err,post)=>{
-        if(err){
-            console.log("Error is here : "
-            +err);
-            return;
-        }
-        console.log(req.user.id);
-        console.log(req.query.id);
-        console.log(post);
+module.exports.createPost = async (req,res)=>{
+    try{
+        await Post.create({
+            content:req.body.content,
+            user:req.user._id
+        });
+    
+        return res.redirect("back");
+    }catch(err){
+        console.log("Error : "+err);
+    }
+    
+}
+
+module.exports.destroy=async (req,res)=>{
+    try{
+        let post = await Post.findById(req.query.id);
         // .id means converting the object id into string
-        
         if(post.user == req.user.id){
             post.remove();
-            Comment.deleteMany({post:req.query.id});
+            await Comment.deleteMany({post:req.query.id});
             return res.redirect("/");
         }
         else{
             return res.redirect("/");
         }
-    })
+    }catch(err){
+        console.log("Error : "+err);
+    }
+    
 }
 

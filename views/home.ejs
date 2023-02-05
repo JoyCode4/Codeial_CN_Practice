@@ -6,11 +6,11 @@
             <textarea name="content" cols="30" rows="3"></textarea>
             <input type="submit" value="Post">
         </form>
-        
+        <% if(locals.user){ %>
         <div id="posts-list-container">
-            <ol>
+            <ul>
                 <%- include('_post') -%>
-            </ol>
+            </ul>
         </div>
     </section>
 
@@ -19,7 +19,8 @@
 
         <% for(let x of all_users){ %>
             <p>
-                <a href="/users/profile/<%=x.id%>"><%=x.email%></a>
+                <a href="/users/profile/?id=<%=x.id%>"><%=x.email%></a>
             </p>
         <% } %>
     </section>
+    <% } %>

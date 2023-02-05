@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 module.exports.profile=function(req,res){
-    User.findById(req.params.id,(err,user)=>{
+    User.findById(req.query.id,(err,user)=>{
         return res.render("profile",{
             title:"User Profile",
             profile_user:user
@@ -66,8 +66,10 @@ module.exports.createSession=function(req,res){
 
 module.exports.destroySession = function(req,res){
     // code is different from sir(callback function of req.logout)
-    req.logout((err)=>{
-        console.log("destroySession there is error");
-    });
-    return res.redirect("/");
+        req.logout((err)=>{
+            if(err){
+                console.log("Session destroy is not done, Error : "+err);
+            }
+        });
+        return res.redirect("/");
 }

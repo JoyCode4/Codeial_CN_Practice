@@ -6,7 +6,7 @@ const usersController=require("../controllers/users_controller");
 // const postsController=require("../controllers/posts_controller");
 console.log("Router is loaded");
 
-router.get("/profile/:id",passport.checkAuthentication,usersController.profile);
+router.get("/profile",passport.checkAuthentication,usersController.profile);
 router.post("/update",passport.checkAuthentication,usersController.update);
 router.get("/sign_in",usersController.signIn);
 router.get("/sign_up",usersController.signUp);
