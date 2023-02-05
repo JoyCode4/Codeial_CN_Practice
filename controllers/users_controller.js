@@ -61,15 +61,18 @@ module.exports.create=function(req,res){
 }
 
 module.exports.createSession=function(req,res){
+    req.flash("success","Logged In Successfully")
     return res.redirect("/");
 }
 
 module.exports.destroySession = function(req,res){
     // code is different from sir(callback function of req.logout)
-        req.logout((err)=>{
-            if(err){
-                console.log("Session destroy is not done, Error : "+err);
-            }
-        });
-        return res.redirect("/");
+    req.logout((err)=>{
+        if(err){
+            console.log("Session destroy is not done, Error : "+err);
+        }
+    });
+    req.flash("success","Logged Out Successfully")
+
+    return res.redirect("/");
 }
