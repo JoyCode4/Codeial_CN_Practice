@@ -1,8 +1,8 @@
 <% for(let post of posts){%>
-    <li>
+    <li id="post-<%= post._id %>">
         <% if((locals.user) && locals.user.id == post.user.id){ %>
         <small>
-            <a href="/posts/destroy/?id=<%= post.id %>">X</a>
+            <a class="delete-post-button" href="/posts/destroy/?id=<%= post.id %>">X</a>
         </small>
         <%}%>
         <%= post.content %>
