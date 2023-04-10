@@ -21,15 +21,23 @@ module.exports.index=async (req,res)=>{
 module.exports.destory=async (req,res)=>{
     try{
         let post=await Post.findById(req.params.id);
-        post.remove();
-        await Comment.deleteMany({post:req.params.id});
+        console.log(post);
+        if(post.user == req.user.id){
+            post.remove();
+            await Comment.deleteMany({post:req.params.id});
 
-        return res.json(200,{
-            message:"Post {"+ post.content +"} is deleted successfully"
-        })
+            return res.json(200,{
+                message:"Post {"+ post.content +"} is deleted successfully"
+            })
+        }else{
+            return res.json(401,{
+                message:"You cannot delete this post!"
+            })
+        }
     }catch(err){
+        console.log("**********",err);
     return res.json(500,{
-        message : "Internal Server Error"
+        message : "Internal Server Error",
     })
 }
 }
