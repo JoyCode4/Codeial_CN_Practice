@@ -1,7 +1,7 @@
 const { localsName } = require("ejs");
 const Comment=require("../models/comment");
 const Post =require("../models/post");
-
+const commentsMailer = require("../mailers/comments_mailer");
 module.exports.createComment=async (req,res)=>{
     try{
         let post = await Post.findById(req.body.post);
@@ -14,6 +14,9 @@ module.exports.createComment=async (req,res)=>{
                 
             post.comments.push(comment);
             post.save();
+            
+            comment = await comment.populate("user","name email");
+            commentsMailer.newComment(comment);
             req.flash("success","comment is Published!");
             res.redirect("/");
         }
