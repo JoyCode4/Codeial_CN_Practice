@@ -2,6 +2,8 @@ const { localsName } = require("ejs");
 const Comment=require("../models/comment");
 const Post =require("../models/post");
 const commentsMailer = require("../mailers/comments_mailer");
+const  queue = require("../config/kue");
+const commentEmailMailer = require("../workers/comment_email_worker");
 module.exports.createComment=async (req,res)=>{
     try{
         let post = await Post.findById(req.body.post);
@@ -16,7 +18,14 @@ module.exports.createComment=async (req,res)=>{
             post.save();
             
             comment = await comment.populate("user","name email");
-            commentsMailer.newComment(comment);
+            // commentsMailer.newComment(comment);
+            let job = queue.create("emails",comment).save(function(err){
+                if(err){
+                    console.log("Error in creating a queur",err);
+                    return;
+                }
+                console.log("Job enqueued is "+job.id);
+            })
             req.flash("success","comment is Published!");
             res.redirect("/");
         }

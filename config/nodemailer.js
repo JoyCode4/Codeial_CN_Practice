@@ -3,13 +3,13 @@ const ejs = require("ejs");
 const path = require("path");
 
 let transporter = nodemailer.createTransport({
-    service : "outlook",
-    host : "smtp.outlook.com",
+    service : "yahoo",
+    host : "smtp.yahoo.com",
     port:587,
     secure:false,
     auth:{
-        user:"jaywadhonkar@outlook.com",
-        pass:"joy00004"
+        user:"jaywadhonkar4@yahoo.com",
+        pass:"joy00004@"
     }
 });
 
