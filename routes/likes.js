@@ -3,5 +3,5 @@ const router=express.Router();
 
 const LikesController = require("../controllers/likes_controller");
 
-router.post("/toggle",LikesController.toggleLike);
+router.get("/toggle",LikesController.toggleLike);
 module.exports = router;

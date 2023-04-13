@@ -38,16 +38,26 @@ module.exports.toggleLike = async (req,res)=>{
                 onModel:req.query.type
             })
 
-            likeable.likes.push(likes._id);
+            likeable.likes.push(newLike._id);
             likeable.save();
         }
 
-        return res.json(200,{
-            message : "Request successful!",
-            data:{
-                deleted:deleted
-            }
-        })
+
+        // return res.json(200,{
+        //         message : "Request successful!",
+        //         data:{
+        //             deleted:deleted
+        //         }
+        //     })
+
+        // return res.redirect("/") && res.json(200,{
+        //     message : "Request successful!",
+        //     data:{
+        //         deleted:deleted
+        //     }
+        // })
+
+        return res.redirect("/");
 
 
 
