@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/chat.css">
+<%if(locals.user){%>
+    
+    <section id="chat_engine">
+        <div class="chat_container">
+            <div class="chat_convers">
+                <ul class="chats">
+                    <li class="from_user">Hello</li>
+                    <li class="to_user"> Hello Buddy! </li>
+                </ul>
+            </div>
+            <div class="input_msg">
+                <input class="msg-box" type="text" placeholder="Enter Message">
+                <button type="submit">Send</button>
+            </div>
+        </div>
+    </section>
+
+<%}%>

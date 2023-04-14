@@ -1,0 +1,48 @@
+/* Chat container */
+.chat_container{
+    position:fixed;
+    bottom: 2%;
+    right: 2%;
+    border: 2px dotted black;
+    width: 250px;
+    min-height: 300px;
+    background-color: rgb(212, 177, 177);
+}
+.input_msg{
+    margin: 10px;
+    position: fixed;
+    bottom: 2%;
+}
+
+.input_msg input{
+    height: 20px;
+    border-style: none;
+}
+
+.input_msg button{
+    height: 25px;
+}
+
+/* Chat coversation container */
+.chat_convers{
+    width: 100%;
+    padding: 0;
+}
+
+.chat_convers ul li{
+    width: 60%;
+    list-style: none;
+    margin:10px auto;
+}
+
+.chat_convers ul .from_user{
+    margin: 10px auto 10px -20px;
+    padding: 10px 3px;
+    background-color: rgb(118, 223, 118);
+}
+
+.chat_convers ul .to_user{
+    margin: 10px 10px 10px auto;
+    padding: 10px 3px;
+    background-color: rgb(219, 155, 35);
+}

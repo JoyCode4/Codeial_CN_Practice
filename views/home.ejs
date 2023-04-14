@@ -1,17 +1,19 @@
-    <h1>Codeial / <%=title%></h1>
-    
-    <section id="feed-post">
-        <h4>Posts</h4>
-        <form id="new-post-form" action="/posts/posts-create" method="post">
-            <textarea name="content" cols="30" rows="3"></textarea>
-            <input type="submit" value="Post">
-        </form>
-        <% if(locals.user){ %>
-        <div id="posts-list-container">
-            <ul>
-                <%- include('_post') -%>
-            </ul>
-        </div>
+
+<h1>Codeial / <%=title%>
+</h1>
+
+<section id="feed-post">
+    <h4>Posts</h4>
+    <form id="new-post-form" action="/posts/posts-create" method="post">
+        <textarea name="content" cols="30" rows="3"></textarea>
+        <input type="submit" value="Post">
+    </form>
+<% if(locals.user){ %>
+            <div id="posts-list-container">
+                <ul>
+                    <%- include('_post') -%>
+                </ul>
+            </div>
     </section>
 
     <section id="user-friends">
@@ -19,14 +21,18 @@
 
         <% for(let x of all_users){ %>
             <p>
-                <a href="/users/profile/?id=<%=x.id%>"><%=x.email%></a>
+                <a href="/users/profile/?id=<%=x.id%>">
+                    <%=x.email%>
+                </a>
             </p>
-        <% } %>
+            <% } %>
     </section>
-    <% } %>
+
+    <%- include("_chatbox") -%>
+<% } %>
 
     <script>
-        $(".toggle-like-button").each(()=>{
+        $(".toggle-like-button").each(() => {
             let self = this;
             let toggleLike = new toggleLike(self);
         });
