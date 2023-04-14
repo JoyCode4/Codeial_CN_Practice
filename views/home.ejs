@@ -32,10 +32,15 @@
 <% } %>
 
     <script>
-        $(".toggle-like-button").each(() => {
-            let self = this;
-            let toggleLike = new toggleLike(self);
-        });
+        // $(".toggle-like-button").each(() => {
+        //     let self = this;
+        //     let toggleLike = new toggleLike(self);
+        // });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.esm.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
     <script src="/js/chat_engine.js"></script>
+    <% if(locals.user){ %>
+    <script>
+        let chat =new ChatEngine("user-chat-box","<%= locals.user._id %>");
+    </script>
+    <% } %>
