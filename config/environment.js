@@ -40,5 +40,5 @@ const production = {
     jwt_secret:process.env.CODEIAL_JWT_SECRET,
 }
 
-// module.exports = eval(process.env.NODE_ENV) == undefined ? development:eval(process.env.NODE_ENV);
-module.exports = development;
+module.exports = eval(process.env.NODE_ENV) == undefined ? development:eval(process.env.NODE_ENV);
+// module.exports = development;
