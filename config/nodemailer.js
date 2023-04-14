@@ -1,17 +1,9 @@
 const nodemailer = require("nodemailer");
 const ejs = require("ejs");
 const path = require("path");
+const env = require("./environment");
 
-let transporter = nodemailer.createTransport({
-    service : "outlook",
-    host : "smtp.outlook.com",
-    port:587,
-    secure:false,
-    auth:{
-        user:"jaywadhonkar@outlook.com",
-        pass:"joy00004"
-    }
-});
+let transporter = nodemailer.createTransport(env.smtp);
 
 
 let renderTemplate = (data,relativePath) =>{
