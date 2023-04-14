@@ -35,13 +35,13 @@
     margin:10px auto;
 }
 
-.chat_convers ul .from_user{
+.chat_convers ul .self-message{
     margin: 10px auto 10px -20px;
     padding: 10px 3px;
     background-color: rgb(118, 223, 118);
 }
 
-.chat_convers ul .to_user{
+.chat_convers ul .other-message{
     margin: 10px 10px 10px auto;
     padding: 10px 3px;
     background-color: rgb(219, 155, 35);

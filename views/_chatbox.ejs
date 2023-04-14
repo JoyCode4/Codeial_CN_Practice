@@ -4,14 +4,18 @@
     <section id="chat_engine">
         <div class="chat_container">
             <div id="user-chat-box" class="chat_convers">
-                <ul class="chats">
-                    <li class="from_user">Hello</li>
-                    <li class="to_user"> Hello Buddy! </li>
+                <ul id="chat-messages-list" class="chats">
+                    <li class="other-message">
+                        <span> Hello</span>
+                    </li>
+                    <li class="self-message"> 
+                        <span> Hello Buddy</span> 
+                    </li>
                 </ul>
             </div>
             <div class="input_msg">
-                <input class="msg-box" type="text" placeholder="Enter Message">
-                <button type="submit">Send</button>
+                <input id="chat-message-input" class="msg-box" type="text" placeholder="Enter Message">
+                <button id="send-message" type="submit">Send</button>
             </div>
         </div>
     </section>
