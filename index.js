@@ -31,7 +31,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 
-app.use(express.static(env.asset_path));
+app.use(express.static(env.assets_path));
 // make the uploads path available for browser
 app.use("/uploads",express.static(__dirname+"/uploads"));
 app.use(expressLayouts);
