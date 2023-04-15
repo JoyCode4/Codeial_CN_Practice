@@ -2,6 +2,7 @@ const cookieParser = require("cookie-parser");
 const express=require("express");
 const app=express();
 const env = require("./config/environment");
+const logger = require("morgan");
 const port=8000;
 const expressLayouts = require("express-ejs-layouts");
 const db=require("./config/mongoose");
@@ -25,6 +26,7 @@ const chatSockets = require("./config/chat_sockets").chatSockets(chatServer);
 chatServer.listen(5000);
 console.log("Chat server is listing on port 5000");
 const path=require("path");
+const morgan = require("morgan");
 
 app.use(express.urlencoded());
 
@@ -34,6 +36,9 @@ app.use(cookieParser());
 app.use(express.static(env.assets_path));
 // make the uploads path available for browser
 app.use("/uploads",express.static(__dirname+"/uploads"));
+
+app.use(logger(env.morgan.mode,env.morgan.options))
+
 app.use(expressLayouts);
 
 // Use for css and js links extraction into the layouts
