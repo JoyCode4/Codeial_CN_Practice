@@ -13,3 +13,34 @@
 [0mGET /users/sign_in [32m200[0m 10.755 ms - 1369[0m
 [0mPOST /users/create-session [36m302[0m 21.663 ms - 46[0m
 [0mGET / [32m200[0m 43.703 ms - 7070[0m
+[0mGET / [32m200[0m 120.876 ms - 6828[0m
+[0mGET / [36m304[0m 52.031 ms - -[0m
+[0mGET / [36m304[0m 37.442 ms - -[0m
+::1 - - [15/Apr/2023:09:12:08 +0000] "GET / HTTP/1.1" 200 1635 "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:08 +0000] "GET /js/chat_engine.js HTTP/1.1" 404 156 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:08 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:18 +0000] "GET /users/sign_in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:18 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:21 +0000] "GET /users/sign_in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:21 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:23 +0000] "GET /users/sign_up HTTP/1.1" 200 1521 "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:23 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:25 +0000] "GET /users/sign_up HTTP/1.1" 304 - "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:25 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:40 +0000] "GET /users/sign_up HTTP/1.1" 304 - "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:40 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:12:40 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:11 +0000] "GET /users/sign_up HTTP/1.1" 304 - "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:11 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:13 +0000] "GET /users/sign_up HTTP/1.1" 304 - "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:13 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:13 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:27 +0000] "GET /users/sign_up HTTP/1.1" 304 - "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:24:28 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign_up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:14 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:21 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:23 +0000] "GET /users/sign_in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:26 +0000] "GET /users/auth/google HTTP/1.1" 302 0 "http://localhost:8000/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:27 +0000] "GET /users/auth/google/callback?code=4%2F0AVHEtk7QL75BfKbiYmvHmI5Ix7zSQPjVom4HMv6r9HU39gowDCoWCrF6ZLf23Ll3Tde_PA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [15/Apr/2023:09:25:27 +0000] "GET / HTTP/1.1" 200 4057 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::1 - - [15/Apr/2023:09:25:33 +0000] "GET /users/profile/?id=64393173c200ef93ced7e445 HTTP/1.1" 200 1588 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
