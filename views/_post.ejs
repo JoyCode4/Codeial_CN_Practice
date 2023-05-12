@@ -1,66 +1,70 @@
-<% for(let post of posts){%>
-    <li id="post-<%= post.id %>">
-        <% if((locals.user) && locals.user.id == post.user.id){ %>
-        <small>
-            <a href="/posts/destroy/?id=<%= post.id %>">X</a>
-        </small>
-        <%}%>
-        <%= post.content %>
-        <br>
-        <span>
-            <%= post.user.name %>
-        </span>
-        <br>
-        <!-- Changes :: Likes -->
-        <small>
-            <% if(locals.user){ %>
-                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id %>&type=Post">
-                    <%= post.likes.length %> Likes
-                </a>
-            <%}else{%>
-                <%= post.likes.length%> Likes
+<div class="postCss">
+    <h1>Posts</h1>
+    <% for(let post of posts){%>
+        <li id="post-<%= post.id %>">
+            <% if((locals.user) && locals.user.id == post.user.id){ %>
+            <small>
+                <a href="/posts/destroy/?id=<%= post.id %>"><i class="fa fa-close"></i></a>
+            </small>
             <%}%>
-        </small>
+            <br>
+            <span class="post-content"><%= post.content %> </span>
+            <br>
+            <span class="post-user">
+                <%= post.user.name %>
+            </span>
+            <br>
+            <!-- Changes :: Likes -->
+            <small>
+                <% if(locals.user){ %>
+                    <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id %>&type=Post">
+                        <%= post.likes.length %> <i class="fa fa-heart-o"></i>
+                    </a>
+                <%}else{%>
+                    <%= post.likes.length%> Likes
+                <%}%>
+            </small>
 
-        <div class="post-comments">
-            <form id="" action="/comments/create-comments" method="post">
-                <span>Comments</span>
-                <br>
-                <input name="content" placeholder="Here place your Comments...." required>
-                <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
-                
-            </form>
+            <hr>
+            <div class="post-comments">
+                <form id="" action="/comments/create-comments" method="post">
+                    <span>Comments : </span>
+                    <input name="content" placeholder="Here place your Comments...." required>
+                    <input type="hidden" name="post" value="<%= post._id %>">
+                    <input type="submit" value="Add Comment">
+                    
+                </form>
 
-            <div class="post-comments-list">
-                <ul id="post-comments-<%= post._id %>">
-                    <% for(comment of post.comments){ %>
-                        <p>
-                            <% if((locals.user) && locals.user.id == comment.user.id){ %>
-                                <small>
-                                    <a href="/comments/destroy/?id=<%= comment.id %>">X</a>
-                                </small>
-                            <%}%>
-                            <%= comment.content %>
-                            <br>
-                            <small>
-                                <%= comment.user.name %>
-                            </small>
-
-                            <!-- Changes :: Likes -->
-                            <small>
-                                <% if(locals.user){ %>
-                                    <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%= comment._id %>&type=Comment">
-                                        <%= comment.likes.length %> Likes
-                                    </a>
-                                <%}else{%>
-                                    <%= comment.likes.length%> Likes
+                <div class="post-comments-list">
+                    <ul id="post-comments-<%= post._id %>">
+                        <% for(comment of post.comments){ %>
+                            <p>
+                                <% if((locals.user) && locals.user.id == comment.user.id){ %>
+                                    <small>
+                                        <a href="/comments/destroy/?id=<%= comment.id %>">X</a>
+                                    </small>
                                 <%}%>
-                            </small>
-                        </p>
-                    <% } %>
-                </ul>
+                                <%= comment.content %>
+                                <br>
+                                <small>
+                                    <%= comment.user.name %>
+                                </small>
+
+                                <!-- Changes :: Likes -->
+                                <small>
+                                    <% if(locals.user){ %>
+                                        <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%= comment._id %>&type=Comment">
+                                            <%= comment.likes.length %> Likes
+                                        </a>
+                                    <%}else{%>
+                                        <%= comment.likes.length%> Likes
+                                    <%}%>
+                                </small>
+                            </p>
+                        <% } %>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
-<%}%>
+        </li>
+    <%}%>
+</div>

@@ -1,0 +1,29 @@
+.postCss{
+    /* margin: auto; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.postCss li{
+    width:400px;
+    list-style: none;
+    /* border: solid black 2px; */
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(221, 153, 153);
+}
+
+.postCss .fa-close{
+    color: rgb(245, 12, 12);
+    font-size: 20px;
+}
+
+.postCss .post-content{
+    margin: 10px 0;
+    /* padding: 10px; */
+    font-size: 20px ;
+    font-weight: 600;
+}

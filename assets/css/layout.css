@@ -1,1 +1,21 @@
 body{margin:0;font-family:sans-serif}
+header ul{
+    padding: 10px;
+    margin-top: 0;
+    background-color: #2cc2d6;
+    display: flex;
+    flex-direction: row-reverse;
+}
+header ul li{
+    padding: 10px;
+    list-style: none;
+    color: #0753e0;
+    font-weight: bold;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}

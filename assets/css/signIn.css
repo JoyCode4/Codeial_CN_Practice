@@ -1,0 +1,47 @@
+.signIn{
+    text-align: center;
+}
+
+.signIn h1{
+    font-size: 30px;
+    color: rgb(3, 82, 55);
+}
+
+.signIn input{
+    display: block;
+    margin: 20px auto;
+    height: 25px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.signIn button{
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #d7e778;
+    transition: all 0.5s ease-in-out;
+}
+
+.signIn button:hover{
+    background-color: #92cc0b;
+    cursor: pointer;
+}
+
+.signIn button:active{
+    background-color: #360e0e;
+    color: #fff;
+}
+
+.signIn p a{
+    text-decoration: none;
+    border: solid rgb(245, 242, 242) 1px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: larger;
+    color: black;
+    background-color: #658af0;
+}
