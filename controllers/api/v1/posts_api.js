@@ -41,3 +41,16 @@ module.exports.destory=async (req,res)=>{
     })
 }
 }
+
+module.exports.posts = async (req,res)=>{
+    try{
+        let posts = await Post.find();
+        return res.status(200).json(posts);
+    }
+    catch(err){
+        console.log("**********",err);
+        return res.json(500,{
+            message : "Internal Server Error",
+        })
+    }
+}
